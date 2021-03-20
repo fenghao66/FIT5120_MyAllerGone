@@ -13,6 +13,9 @@
 		ACAE558226061C0700BFB05C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAE558026061C0700BFB05C /* Main.storyboard */; };
 		ACAE558426061C0B00BFB05C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAE558326061C0B00BFB05C /* Assets.xcassets */; };
 		ACAE558726061C0B00BFB05C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACAE558526061C0B00BFB05C /* LaunchScreen.storyboard */; };
+		ACAE559926062AA100BFB05C /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE559826062AA100BFB05C /* LocationViewController.swift */; };
+		ACAE559D26062AC100BFB05C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE559C26062AC100BFB05C /* HomeViewController.swift */; };
+		ACAE55A32606399400BFB05C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE55A22606399300BFB05C /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		ACAE558326061C0B00BFB05C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACAE558626061C0B00BFB05C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACAE558826061C0B00BFB05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACAE559826062AA100BFB05C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		ACAE559C26062AC100BFB05C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		ACAE55A22606399300BFB05C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +65,47 @@
 				ACAE557A26061C0700BFB05C /* AppDelegate.swift */,
 				ACAE557C26061C0700BFB05C /* SceneDelegate.swift */,
 				ACAE557E26061C0700BFB05C /* ViewController.swift */,
+				ACAE558F2606299300BFB05C /* Home Screen */,
+				ACAE55A02606391D00BFB05C /* Search Screen */,
+				ACAE5593260629D100BFB05C /* Map Screen */,
+				ACAE55A12606395C00BFB05C /* Info Screen */,
 				ACAE558026061C0700BFB05C /* Main.storyboard */,
 				ACAE558326061C0B00BFB05C /* Assets.xcassets */,
 				ACAE558526061C0B00BFB05C /* LaunchScreen.storyboard */,
 				ACAE558826061C0B00BFB05C /* Info.plist */,
 			);
 			path = FIT5120_MyAllerGone;
+			sourceTree = "<group>";
+		};
+		ACAE558F2606299300BFB05C /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE559C26062AC100BFB05C /* HomeViewController.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		ACAE5593260629D100BFB05C /* Map Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE559826062AA100BFB05C /* LocationViewController.swift */,
+			);
+			path = "Map Screen";
+			sourceTree = "<group>";
+		};
+		ACAE55A02606391D00BFB05C /* Search Screen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Search Screen";
+			sourceTree = "<group>";
+		};
+		ACAE55A12606395C00BFB05C /* Info Screen */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE55A22606399300BFB05C /* InfoViewController.swift */,
+			);
+			path = "Info Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACAE559D26062AC100BFB05C /* HomeViewController.swift in Sources */,
+				ACAE559926062AA100BFB05C /* LocationViewController.swift in Sources */,
 				ACAE557F26061C0700BFB05C /* ViewController.swift in Sources */,
 				ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */,
+				ACAE55A32606399400BFB05C /* InfoViewController.swift in Sources */,
 				ACAE557D26061C0700BFB05C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
