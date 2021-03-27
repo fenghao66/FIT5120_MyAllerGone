@@ -9,7 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    var image:UIImage = UIImage()
+    @IBOutlet weak var HomeCollectionView: UICollectionView!
+    //var image:UIImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,3 +43,43 @@ class HomeViewController: UIViewController {
     */
 
 }
+
+// MARK: - Collection view data source
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
+
+            cell.layer.cornerRadius = 5.0
+            cell.layer.shadowOpacity = 0.3
+            cell.layer.shadowRadius = 5
+            cell.layer.masksToBounds = false
+
+            cell.tempLabel.text = "16"
+            cell.weatherImage.image = #imageLiteral(resourceName: "cloudy_click")
+            return cell
+        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AQICollectionViewCell", for: indexPath) as! AQICollectionViewCell
+        
+        cell.layer.cornerRadius = 5.0
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowRadius = 5
+        cell.layer.masksToBounds = false
+
+        cell.AQILabel.text = "17"
+        cell.AQIImage.image = #imageLiteral(resourceName: "location_click")
+        return cell
+    }
+}
+

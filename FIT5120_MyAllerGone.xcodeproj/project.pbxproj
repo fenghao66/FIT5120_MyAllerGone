@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC1EF07F260F260300C56B93 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */; };
+		AC1EF083260F349700C56B93 /* AQICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF082260F349700C56B93 /* AQICollectionViewCell.swift */; };
 		ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE557A26061C0700BFB05C /* AppDelegate.swift */; };
 		ACAE557D26061C0700BFB05C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE557C26061C0700BFB05C /* SceneDelegate.swift */; };
 		ACAE557F26061C0700BFB05C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE557E26061C0700BFB05C /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC1EF082260F349700C56B93 /* AQICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQICollectionViewCell.swift; sourceTree = "<group>"; };
 		ACAE557726061C0700BFB05C /* FIT5120_MyAllerGone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIT5120_MyAllerGone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE557A26061C0700BFB05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAE557C26061C0700BFB05C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				ACAE559C26062AC100BFB05C /* HomeViewController.swift */,
+				AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */,
+				AC1EF082260F349700C56B93 /* AQICollectionViewCell.swift */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -178,12 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC1EF083260F349700C56B93 /* AQICollectionViewCell.swift in Sources */,
 				ACAE559D26062AC100BFB05C /* HomeViewController.swift in Sources */,
 				ACAE559926062AA100BFB05C /* LocationViewController.swift in Sources */,
 				ACAE557F26061C0700BFB05C /* ViewController.swift in Sources */,
 				ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */,
 				ACAE55A32606399400BFB05C /* InfoViewController.swift in Sources */,
 				ACAE557D26061C0700BFB05C /* SceneDelegate.swift in Sources */,
+				AC1EF07F260F260300C56B93 /* WeatherCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
