@@ -39,22 +39,32 @@ struct WeatherModel {
     
     var conditionName: String{
         switch conditionId {
-        case  200...232:
-            return "cloud.bold"
+        case  200...202:
+            return "006-storm"
+        case  203...232:
+            return "007-thunder"
         case  300...321:
-            return "cloud.drizzle"
-        case  500...531:
-            return "cloud.rain"
-        case  600...622:
-            return "cloud.snow"
+            return "004-rainy"
+        case  500...504:
+            return "003-rain"
+        case  511, 612...622:
+            return "008-snow"
+        case  520...531:
+            return "005-heavy rain"
+        case  600...611:
+            return "009-snow"
         case  701...781:
-            return "cloud.fog"
+            return "051-fog"
         case  800:
-            return "sun.max"
-        case  801...804:
-            return "cloud.bolt"
+            return "052-sun"
+        case  801:
+            return "few_clouds"
+        case  802, 803:
+            return "clouds"
+        case  804:
+            return "cloudy"
         default:
-            return "cloud"
+            return "thermometer"
         }
     }
 }

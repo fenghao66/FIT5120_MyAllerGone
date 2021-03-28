@@ -14,16 +14,16 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var HomeCollectionView: UICollectionView!
     //var image:UIImage = UIImage()
     
-    var temp: String?
+    var temp: String = "--"
+    var weatherImageName: String?
+    var currentDate: String?
+    var currentWeekday: String?
+    var weatherDesc: String?
+    var MinTemp: String?
+    var MaxTemp: String?
+    
     var locationManager: CLLocationManager = CLLocationManager()
-    
     var weatherManager = WeatherManager()
-    
-//    var WeatherModel: WeatherModel! {
-//        didSet {
-//            self.HomeCollectionView.reloadData()
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,6 +104,45 @@ class HomeViewController: UIViewController {
 //        }
         locationManager.startUpdatingLocation()
     }
+    //MARK: - Get current date and week
+    
+    func getCurrentDateString() -> String {
+            let now = Date()
+            let dformatter = DateFormatter()
+            dformatter.dateFormat = "MM/dd"
+            return dformatter.string(from: now)
+        }
+    func getCurrentDate() -> Date {
+          let now = Date()
+          let dateformatter = DateFormatter()
+          dateformatter.dateFormat = "yyyy-MM-dd"
+          let dateStr = dateformatter.string(from: now)
+          return dateformatter.date(from: dateStr)!
+      }
+    func getWeedayFromeDate(date: Date) -> String {
+           let calendar = Calendar.current
+           let dateComponets = calendar.dateComponents([Calendar.Component.year,Calendar.Component.month,Calendar.Component.weekday,Calendar.Component.day], from: date)
+           // get what day is today
+           let weekDay = dateComponets.weekday
+           switch weekDay {
+           case 1:
+               return "Sun"
+           case 2:
+              return  "Mon"
+           case 3:
+               return "Tue"
+           case 4:
+               return "Wed"
+           case 5:
+               return "Thu"
+           case 6:
+               return "Fri"
+           case 7:
+               return "Sat"
+           default:
+               return ""
+           }
+       }
     
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,preferredStyle: UIAlertController.Style.alert)
@@ -132,12 +171,22 @@ extension HomeViewController: WeatherManagerDelegate {
         
         DispatchQueue.main.async {
             
-            self.temp = "\(weather.temperatureString)"
-            print(self.temp ?? "no temp")
+            self.temp = "\(weather.temperatureString)" 
+            //print(self.temp ?? "no temp")
             self.CityLabel.text = weather.cityName
+            self.weatherImageName = weather.conditionName
+            self.weatherDesc = weather.description
+            self.MinTemp = weather.minTempString
+            self.MaxTemp = weather.maxTempString
+            
+            let date = self.getCurrentDate()
+            self.currentDate = self.getCurrentDateString()
+            self.currentWeekday = self.getWeedayFromeDate(date: date)
+            
             self.HomeCollectionView.reloadData()
+            
 //            self.temperatureLabel.text = weather.temperatureString
-//            self.conditionImageView.image = UIImage(systemName: weather.conditionName)
+//
 //
 //            self.countryName.text = weather.countryName
 //            self.descriptionLabel.text = weather.description.uppercased()
@@ -180,8 +229,12 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.layer.masksToBounds = false
 
             cell.tempLabel.text = self.temp
+            cell.dateLabel.text = self.currentDate
+            cell.weatherDescLabel.text = self.weatherDesc?.capitalized
+            cell.MinMaxTempLabel.text = String("\(self.MinTemp ?? "?")" + "-" + "\(self.MaxTemp ?? "?")" + "°C")
             //print(temp!)
-            cell.weatherImage.image = #imageLiteral(resourceName: "cloudy_click")
+            //#imageLiteral(resourceName: "weatherImageName")
+            cell.weatherImage.image =  UIImage(named: "\(weatherImageName ?? "noImage")")
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AQICollectionViewCell", for: indexPath) as! AQICollectionViewCell
@@ -192,7 +245,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.layer.masksToBounds = false
 
         cell.AQILabel.text = "17"
-        cell.AQIImage.image = #imageLiteral(resourceName: "location_click")
+        cell.AQIImage.image = #imageLiteral(resourceName: "001-sunny")
+        
         return cell
     }
 }

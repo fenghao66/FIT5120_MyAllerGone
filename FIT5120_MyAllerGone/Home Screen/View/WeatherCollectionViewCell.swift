@@ -11,6 +11,10 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var weedayLabel: UILabel!
+    @IBOutlet weak var weatherDescLabel: UILabel!
+    @IBOutlet weak var MinMaxTempLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
