@@ -9,25 +9,25 @@ import Foundation
 
 //MARK: - Struct's of the JSON file.
 
-struct VolumeData: Codable {
-    let data: TempData
-}
+//struct VolumeData: Codable {
+//    let data: TempData
+//}
 
-struct TempData: Codable {
-    let temperature: Temp
-    let feels_like_temperature: FeelTemp
-    let weather_text: String
-    let relative_humidity: String
-    let icon_code: Int
-}
+//struct TempData: Codable {
+//    let temperature: Temp
+//    let feels_like_temperature: FeelTemp
+//    let weather_text: String
+//    let relative_humidity: String
+//    let icon_code: Int
+//}
 
-struct Temp: Codable {
-    let value: Float
-}
-
-struct FeelTemp: Codable {
-    let value: Float
-}
+//struct Temp: Codable {
+//    let value: Float
+//}
+//
+//struct FeelTemp: Codable {
+//    let value: Float
+//}
 
 //struct Main: Codable {
 //    let temp: Float

@@ -22,17 +22,45 @@ class HomeViewController: UIViewController {
     var MinTemp: String?
     var MaxTemp: String?
     
+    var forecastImage1: String?
+    var forecastDate1: String?
+    var forecastDesc1: String?
+    var forecastMin1: String?
+    var forecastMax1: String?
+    
+    var forecastImage2: String?
+    var forecastDate2: String?
+    var forecastDesc2: String?
+    var forecastMin2: String?
+    var forecastMax2: String?
+    
+    var forecastImage3: String?
+    var forecastDate3: String?
+    var forecastDesc3: String?
+    var forecastMin3: String?
+    var forecastMax3: String?
+    
+    
     var locationManager: CLLocationManager = CLLocationManager()
     var weatherManager = WeatherManager()
+    var forecastManager = ForecastManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //let cellScale: CGFloat = 0.90
+        let screenSize = UIScreen.main.bounds.size
+        let cellWidth = floor(screenSize.width * 0.92)
+        let layout = HomeCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
+        //let cellSize = layout.collectionViewContentSize
+        layout.itemSize = CGSize(width: cellWidth, height: 150)
         
         // locationManager delegate
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         weatherManager.delegate = self
+        forecastManager.delegate = self
 
         // Do any additional setup after loading the view.
         guard let tabBar = tabBarController?.tabBar else {
@@ -206,6 +234,38 @@ extension HomeViewController: WeatherManagerDelegate {
     }
 }
 
+//MARK: - Receive the forecast data and send it to the UI
+
+extension HomeViewController: ForecastManagerDelegate {
+    
+    func updateForecast(_ weatherManager: ForecastManager, weather: ForecastModel){
+        
+        DispatchQueue.main.async {
+            
+            self.forecastImage1 = weather.conditionName
+            self.forecastDesc1 = weather.description
+            self.forecastMin1 = weather.minTempString
+            self.forecastMax1 = weather.maxTempString
+            
+            self.forecastImage2 = weather.conditionName2
+            self.forecastDesc2 = weather.description2
+            self.forecastMin2 = weather.minTempString2
+            self.forecastMax2 = weather.maxTempString2
+            
+            self.forecastImage3 = weather.conditionName3
+            self.forecastDesc3 = weather.description3
+            self.forecastMin3 = weather.minTempString3
+            self.forecastMax3 = weather.maxTempString3
+            
+//            let date = self.getCurrentDate()
+//            self.currentDate = self.getCurrentDateString()
+//            self.currentWeekday = self.getWeedayFromeDate(date: date)
+            
+            self.HomeCollectionView.reloadData()
+        }
+    }
+}
+
 // MARK: - Collection view data source
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -222,7 +282,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         if indexPath.row == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
-
+            
             cell.layer.cornerRadius = 5.0
             cell.layer.shadowOpacity = 0.3
             cell.layer.shadowRadius = 5
@@ -230,8 +290,9 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
             cell.tempLabel.text = self.temp
             cell.dateLabel.text = self.currentDate
+            cell.weedayLabel.text = self.currentWeekday
             cell.weatherDescLabel.text = self.weatherDesc?.capitalized
-            cell.MinMaxTempLabel.text = String("\(self.MinTemp ?? "?")" + "-" + "\(self.MaxTemp ?? "?")" + "°C")
+            cell.MinMaxTempLabel.text = String("\(self.MinTemp ?? "?")-\(self.MaxTemp ?? "?")°C")
             //print(temp!)
             //#imageLiteral(resourceName: "weatherImageName")
             cell.weatherImage.image =  UIImage(named: "\(weatherImageName ?? "noImage")")
@@ -244,11 +305,24 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
 
-        cell.AQILabel.text = "17"
-        cell.AQIImage.image = #imageLiteral(resourceName: "001-sunny")
+        cell.firstDayLabel.text = "Mon"
+        cell.firstImage.image = UIImage(named: "\(forecastImage1 ?? "noImage")")
+        cell.firstTempLabel.text = String("\(self.forecastMin1 ?? "?")°-\(self.forecastMax1 ?? "?")°")
+        cell.firstDescLabel.text = self.forecastDesc1?.capitalized
+        
+        cell.SecondDayLabel.text = "Mon"
+        cell.secondImage.image = UIImage(named: "\(forecastImage2 ?? "noImage")")
+        cell.secondTempLabel.text = String("\(self.forecastMin2 ?? "?")°-\(self.forecastMax2 ?? "?")°")
+        cell.decondDescLabel.text = self.forecastDesc2?.capitalized
+        
+        cell.thirdDayLabel.text = "Mon"
+        cell.thirdImage.image = UIImage(named: "\(forecastImage3 ?? "noImage")")
+        cell.thirdTempLabel.text = String("\(self.forecastMin3 ?? "?")°-\(self.forecastMax3 ?? "?")°")
+        cell.thirdDescLabel.text = self.forecastDesc3?.capitalized
         
         return cell
     }
+    
 }
 
 extension HomeViewController: CLLocationManagerDelegate{
@@ -265,6 +339,7 @@ extension HomeViewController: CLLocationManagerDelegate{
             print("current location lat \(lat)")
             print("current location lng \(lon)")
             weatherManager.fecthWeatherLocation( latitude: lat, longitude: lon)
+            forecastManager.fecthForecastLocation(latitude: lat, longitude: lon)
             
         }
     }

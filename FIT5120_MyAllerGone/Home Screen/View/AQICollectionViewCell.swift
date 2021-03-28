@@ -9,14 +9,18 @@ import UIKit
 
 class AQICollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var AQIImage: UIImageView!
-    @IBOutlet weak var AQILabel: UILabel!
+    @IBOutlet weak var firstDayLabel: UILabel!
+    @IBOutlet weak var SecondDayLabel: UILabel!
+    @IBOutlet weak var thirdDayLabel: UILabel!
+    @IBOutlet weak var firstImage: UIImageView!
+    @IBOutlet weak var secondImage: UIImageView!
+    @IBOutlet weak var thirdImage: UIImageView!
+    @IBOutlet weak var firstTempLabel: UILabel!
+    @IBOutlet weak var secondTempLabel: UILabel!
+    @IBOutlet weak var thirdTempLabel: UILabel!
+    @IBOutlet weak var firstDescLabel: UILabel!
+    @IBOutlet weak var decondDescLabel: UILabel!
+    @IBOutlet weak var thirdDescLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        AQIImage.layer.cornerRadius = 10.0
-        //weatherImage.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        AQIImage.layer.masksToBounds = true
-    }
+   
 }

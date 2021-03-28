@@ -16,11 +16,11 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var weatherDescLabel: UILabel!
     @IBOutlet weak var MinMaxTempLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-        weatherImage.layer.cornerRadius = 10.0
-        //weatherImage.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        weatherImage.layer.masksToBounds = true
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//        weatherImage.layer.cornerRadius = 10.0
+//        //weatherImage.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+//        weatherImage.layer.masksToBounds = true
+//    }
 }

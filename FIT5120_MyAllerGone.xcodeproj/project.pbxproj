@@ -13,6 +13,9 @@
 		AC4F4A68260F71DC00A2E416 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */; };
 		AC4F4A6C260F762E00A2E416 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A6B260F762E00A2E416 /* VolumeData.swift */; };
 		AC4F4A70260F7EA400A2E416 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A6F260F7EA400A2E416 /* WeatherData.swift */; };
+		AC8812A02610DC0300103566 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88129F2610DC0300103566 /* ForecastData.swift */; };
+		AC8812A32610DF9400103566 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8812A22610DF9400103566 /* ForecastModel.swift */; };
+		AC8812A62610E1ED00103566 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8812A52610E1ED00103566 /* ForecastManager.swift */; };
 		ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE557A26061C0700BFB05C /* AppDelegate.swift */; };
 		ACAE557D26061C0700BFB05C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE557C26061C0700BFB05C /* SceneDelegate.swift */; };
 		ACAE557F26061C0700BFB05C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE557E26061C0700BFB05C /* ViewController.swift */; };
@@ -31,6 +34,9 @@
 		AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		AC4F4A6B260F762E00A2E416 /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
 		AC4F4A6F260F7EA400A2E416 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		AC88129F2610DC0300103566 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		AC8812A22610DF9400103566 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
+		AC8812A52610E1ED00103566 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
 		ACAE557726061C0700BFB05C /* FIT5120_MyAllerGone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIT5120_MyAllerGone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE557A26061C0700BFB05C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACAE557C26061C0700BFB05C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +68,9 @@
 				AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */,
 				AC4F4A6B260F762E00A2E416 /* VolumeData.swift */,
 				AC4F4A6F260F7EA400A2E416 /* WeatherData.swift */,
+				AC88129F2610DC0300103566 /* ForecastData.swift */,
+				AC8812A22610DF9400103566 /* ForecastModel.swift */,
+				AC8812A52610E1ED00103566 /* ForecastManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,8 +230,11 @@
 				AC4F4A62260F704F00A2E416 /* WeatherManager.swift in Sources */,
 				ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */,
 				ACAE55A32606399400BFB05C /* InfoViewController.swift in Sources */,
+				AC8812A62610E1ED00103566 /* ForecastManager.swift in Sources */,
 				ACAE557D26061C0700BFB05C /* SceneDelegate.swift in Sources */,
 				AC4F4A70260F7EA400A2E416 /* WeatherData.swift in Sources */,
+				AC8812A02610DC0300103566 /* ForecastData.swift in Sources */,
+				AC8812A32610DF9400103566 /* ForecastModel.swift in Sources */,
 				AC1EF07F260F260300C56B93 /* WeatherCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
