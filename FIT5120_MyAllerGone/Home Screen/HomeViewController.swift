@@ -147,11 +147,11 @@ class HomeViewController: UIViewController {
           let dateStr = dateformatter.string(from: now)
           return dateformatter.date(from: dateStr)!
       }
-    func getWeedayFromeDate(date: Date) -> String {
+    func getWeedayFromeDate(date: Date, forecastIndex: Int) -> String {
            let calendar = Calendar.current
            let dateComponets = calendar.dateComponents([Calendar.Component.year,Calendar.Component.month,Calendar.Component.weekday,Calendar.Component.day], from: date)
            // get what day is today
-           let weekDay = dateComponets.weekday
+           let weekDay = dateComponets.weekday! + forecastIndex
            switch weekDay {
            case 1:
                return "Sun"
@@ -171,6 +171,19 @@ class HomeViewController: UIViewController {
                return ""
            }
        }
+    
+    func updateWeekAndDate() {
+        let date = self.getCurrentDate()
+        self.currentDate = self.getCurrentDateString()
+        self.currentWeekday = self.getWeedayFromeDate(date: date, forecastIndex: 0)
+    }
+    
+    func updateForecastWeek() {
+        let date = self.getCurrentDate()
+        self.forecastDate1 = self.getWeedayFromeDate(date: date, forecastIndex: 1)
+        self.forecastDate2 = self.getWeedayFromeDate(date: date, forecastIndex: 2)
+        self.forecastDate3 = self.getWeedayFromeDate(date: date, forecastIndex: 3)
+    }
     
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,preferredStyle: UIAlertController.Style.alert)
@@ -206,10 +219,11 @@ extension HomeViewController: WeatherManagerDelegate {
             self.weatherDesc = weather.description
             self.MinTemp = weather.minTempString
             self.MaxTemp = weather.maxTempString
+            self.updateWeekAndDate()
             
-            let date = self.getCurrentDate()
-            self.currentDate = self.getCurrentDateString()
-            self.currentWeekday = self.getWeedayFromeDate(date: date)
+//            let date = self.getCurrentDate()
+//            self.currentDate = self.getCurrentDateString()
+//            self.currentWeekday = self.getWeedayFromeDate(date: date)
             
             self.HomeCollectionView.reloadData()
             
@@ -257,9 +271,7 @@ extension HomeViewController: ForecastManagerDelegate {
             self.forecastMin3 = weather.minTempString3
             self.forecastMax3 = weather.maxTempString3
             
-//            let date = self.getCurrentDate()
-//            self.currentDate = self.getCurrentDateString()
-//            self.currentWeekday = self.getWeedayFromeDate(date: date)
+            self.updateForecastWeek()
             
             self.HomeCollectionView.reloadData()
         }
@@ -305,17 +317,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.layer.shadowRadius = 5
         cell.layer.masksToBounds = false
 
-        cell.firstDayLabel.text = "Mon"
+        cell.firstDayLabel.text = self.forecastDate1
         cell.firstImage.image = UIImage(named: "\(forecastImage1 ?? "noImage")")
         cell.firstTempLabel.text = String("\(self.forecastMin1 ?? "?")°-\(self.forecastMax1 ?? "?")°")
         cell.firstDescLabel.text = self.forecastDesc1?.capitalized
         
-        cell.SecondDayLabel.text = "Mon"
+        cell.SecondDayLabel.text = self.forecastDate2
         cell.secondImage.image = UIImage(named: "\(forecastImage2 ?? "noImage")")
         cell.secondTempLabel.text = String("\(self.forecastMin2 ?? "?")°-\(self.forecastMax2 ?? "?")°")
         cell.decondDescLabel.text = self.forecastDesc2?.capitalized
         
-        cell.thirdDayLabel.text = "Mon"
+        cell.thirdDayLabel.text = self.forecastDate3
         cell.thirdImage.image = UIImage(named: "\(forecastImage3 ?? "noImage")")
         cell.thirdTempLabel.text = String("\(self.forecastMin3 ?? "?")°-\(self.forecastMax3 ?? "?")°")
         cell.thirdDescLabel.text = self.forecastDesc3?.capitalized
