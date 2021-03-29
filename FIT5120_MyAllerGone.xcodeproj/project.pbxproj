@@ -3,16 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA3DDDB07C97B6305889731E /* Pods_FIT5120_MyAllerGone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0BEB5D5D34F87F5B0FB8F /* Pods_FIT5120_MyAllerGone.framework */; };
 		AC1EF07F260F260300C56B93 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */; };
-		AC1EF083260F349700C56B93 /* AQICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF082260F349700C56B93 /* AQICollectionViewCell.swift */; };
+		AC1EF083260F349700C56B93 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF082260F349700C56B93 /* ForecastCollectionViewCell.swift */; };
 		AC4F4A62260F704F00A2E416 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A61260F704F00A2E416 /* WeatherManager.swift */; };
 		AC4F4A68260F71DC00A2E416 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */; };
 		AC4F4A6C260F762E00A2E416 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A6B260F762E00A2E416 /* VolumeData.swift */; };
 		AC4F4A70260F7EA400A2E416 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A6F260F7EA400A2E416 /* WeatherData.swift */; };
+		AC76586E26122DE300F07A38 /* AQICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC76586D26122DE300F07A38 /* AQICollectionViewCell.swift */; };
 		AC8812A02610DC0300103566 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC88129F2610DC0300103566 /* ForecastData.swift */; };
 		AC8812A32610DF9400103566 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8812A22610DF9400103566 /* ForecastModel.swift */; };
 		AC8812A62610E1ED00103566 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8812A52610E1ED00103566 /* ForecastManager.swift */; };
@@ -28,12 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09C0BEB5D5D34F87F5B0FB8F /* Pods_FIT5120_MyAllerGone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FIT5120_MyAllerGone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A5AB9E5A0E0BC53773D537 /* Pods-FIT5120_MyAllerGone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5120_MyAllerGone.debug.xcconfig"; path = "Target Support Files/Pods-FIT5120_MyAllerGone/Pods-FIT5120_MyAllerGone.debug.xcconfig"; sourceTree = "<group>"; };
+		7F76D8473DEF2512D28EC361 /* Pods-FIT5120_MyAllerGone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5120_MyAllerGone.release.xcconfig"; path = "Target Support Files/Pods-FIT5120_MyAllerGone/Pods-FIT5120_MyAllerGone.release.xcconfig"; sourceTree = "<group>"; };
 		AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
-		AC1EF082260F349700C56B93 /* AQICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQICollectionViewCell.swift; sourceTree = "<group>"; };
+		AC1EF082260F349700C56B93 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC4F4A61260F704F00A2E416 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		AC4F4A6B260F762E00A2E416 /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
 		AC4F4A6F260F7EA400A2E416 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		AC76586D26122DE300F07A38 /* AQICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQICollectionViewCell.swift; sourceTree = "<group>"; };
 		AC88129F2610DC0300103566 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		AC8812A22610DF9400103566 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		AC8812A52610E1ED00103566 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
@@ -55,12 +61,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3DDDB07C97B6305889731E /* Pods_FIT5120_MyAllerGone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		341E017861BE3B115694D9EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09C0BEB5D5D34F87F5B0FB8F /* Pods_FIT5120_MyAllerGone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB86E69E9B67E07C8C227901 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				22A5AB9E5A0E0BC53773D537 /* Pods-FIT5120_MyAllerGone.debug.xcconfig */,
+				7F76D8473DEF2512D28EC361 /* Pods-FIT5120_MyAllerGone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AC4F4A66260F71C800A2E416 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,9 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */,
-				AC1EF082260F349700C56B93 /* AQICollectionViewCell.swift */,
+				AC1EF082260F349700C56B93 /* ForecastCollectionViewCell.swift */,
+				AC76586D26122DE300F07A38 /* AQICollectionViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AC76586726122A3900F07A38 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ACAE559C26062AC100BFB05C /* HomeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		ACAE556E26061C0700BFB05C = {
@@ -89,6 +122,8 @@
 			children = (
 				ACAE557926061C0700BFB05C /* FIT5120_MyAllerGone */,
 				ACAE557826061C0700BFB05C /* Products */,
+				AB86E69E9B67E07C8C227901 /* Pods */,
+				341E017861BE3B115694D9EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,7 +158,7 @@
 			children = (
 				AC4F4A66260F71C800A2E416 /* Model */,
 				AC4F4A72260FA06E00A2E416 /* View */,
-				ACAE559C26062AC100BFB05C /* HomeViewController.swift */,
+				AC76586726122A3900F07A38 /* Controller */,
 			);
 			path = "Home Screen";
 			sourceTree = "<group>";
@@ -158,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACAE558B26061C0B00BFB05C /* Build configuration list for PBXNativeTarget "FIT5120_MyAllerGone" */;
 			buildPhases = (
+				B945BA3FB57645F712E6BC41 /* [CP] Check Pods Manifest.lock */,
 				ACAE557326061C0700BFB05C /* Sources */,
 				ACAE557426061C0700BFB05C /* Frameworks */,
 				ACAE557526061C0700BFB05C /* Resources */,
+				BB94E06A989DA121CBF7B0F7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,12 +253,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B945BA3FB57645F712E6BC41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FIT5120_MyAllerGone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB94E06A989DA121CBF7B0F7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT5120_MyAllerGone/Pods-FIT5120_MyAllerGone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FIT5120_MyAllerGone/Pods-FIT5120_MyAllerGone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FIT5120_MyAllerGone/Pods-FIT5120_MyAllerGone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ACAE557326061C0700BFB05C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC1EF083260F349700C56B93 /* AQICollectionViewCell.swift in Sources */,
+				AC1EF083260F349700C56B93 /* ForecastCollectionViewCell.swift in Sources */,
 				ACAE559D26062AC100BFB05C /* HomeViewController.swift in Sources */,
 				ACAE559926062AA100BFB05C /* LocationViewController.swift in Sources */,
 				ACAE557F26061C0700BFB05C /* ViewController.swift in Sources */,
@@ -229,6 +308,7 @@
 				AC4F4A6C260F762E00A2E416 /* VolumeData.swift in Sources */,
 				AC4F4A62260F704F00A2E416 /* WeatherManager.swift in Sources */,
 				ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */,
+				AC76586E26122DE300F07A38 /* AQICollectionViewCell.swift in Sources */,
 				ACAE55A32606399400BFB05C /* InfoViewController.swift in Sources */,
 				AC8812A62610E1ED00103566 /* ForecastManager.swift in Sources */,
 				ACAE557D26061C0700BFB05C /* SceneDelegate.swift in Sources */,
@@ -379,6 +459,7 @@
 		};
 		ACAE558C26061C0B00BFB05C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22A5AB9E5A0E0BC53773D537 /* Pods-FIT5120_MyAllerGone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -398,6 +479,7 @@
 		};
 		ACAE558D26061C0B00BFB05C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F76D8473DEF2512D28EC361 /* Pods-FIT5120_MyAllerGone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

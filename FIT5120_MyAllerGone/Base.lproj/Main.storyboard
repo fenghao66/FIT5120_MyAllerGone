@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="-1374" y="919"/>
         </scene>
-        <!--Daily Forcast-->
+        <!--MyAllerGone-->
         <scene sceneID="wBN-z9-909">
             <objects>
                 <viewController id="G1S-qJ-VHC" customClass="HomeViewController" customModule="FIT5120_MyAllerGone" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                                             <outlet property="weedayLabel" destination="kh0-qH-sT7" id="cEd-E2-fWu"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AQICollectionViewCell" id="pWB-Ke-gpw" customClass="AQICollectionViewCell" customModule="FIT5120_MyAllerGone" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ForecastCollectionViewCell" id="pWB-Ke-gpw" customClass="ForecastCollectionViewCell" customModule="FIT5120_MyAllerGone" customModuleProvider="target">
                                         <rect key="frame" x="39" y="176" width="350" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Zd6-sg-wqN">
@@ -313,6 +313,88 @@
                                             <outlet property="thirdTempLabel" destination="pDz-cP-yG0" id="73a-lL-rTC"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AQICollectionViewCell" id="FKX-5j-wan" customClass="AQICollectionViewCell" customModule="FIT5120_MyAllerGone" customModuleProvider="target">
+                                        <rect key="frame" x="39" y="336" width="350" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aoh-uQ-Slh">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JI-9p-rKw">
+                                                    <rect key="frame" x="5" y="5" width="140" height="140"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="68" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Du-07-iKW">
+                                                            <rect key="frame" x="53" y="50" width="25" height="24"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AQI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3w-2I-0m2">
+                                                            <rect key="frame" x="3" y="3" width="37" height="24"/>
+                                                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good air quality" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbo-3g-Jn3">
+                                                            <rect key="frame" x="18.333333333333336" y="109" width="104.66666666666666" height="33"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansMyanmar-Regular" family="Noto Sans Myanmar" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Wbo-3g-Jn3" firstAttribute="top" secondItem="3Du-07-iKW" secondAttribute="bottom" constant="35" id="1lo-3n-QM8"/>
+                                                        <constraint firstItem="O3w-2I-0m2" firstAttribute="leading" secondItem="5JI-9p-rKw" secondAttribute="leading" constant="3" id="Nzf-VP-8Ul"/>
+                                                        <constraint firstAttribute="height" constant="140" id="RBe-rd-MEr"/>
+                                                        <constraint firstItem="3Du-07-iKW" firstAttribute="leading" secondItem="5JI-9p-rKw" secondAttribute="leading" constant="53" id="SwZ-xY-wUL"/>
+                                                        <constraint firstItem="3Du-07-iKW" firstAttribute="top" secondItem="5JI-9p-rKw" secondAttribute="top" constant="50" id="aQ1-ag-Yuj"/>
+                                                        <constraint firstAttribute="width" constant="140" id="kF5-zD-A5I"/>
+                                                        <constraint firstItem="Wbo-3g-Jn3" firstAttribute="centerX" secondItem="3Du-07-iKW" secondAttribute="centerX" constant="5" id="ujG-IA-EAQ"/>
+                                                        <constraint firstItem="O3w-2I-0m2" firstAttribute="top" secondItem="5JI-9p-rKw" secondAttribute="top" constant="3" id="wcH-QJ-zUa"/>
+                                                    </constraints>
+                                                </view>
+                                                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="As5-7t-NGd">
+                                                    <rect key="frame" x="153" y="16" width="1" height="122"/>
+                                                    <color key="backgroundColor" red="0.79757071530000001" green="0.79371771670000002" blue="0.8014237139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="122" id="Ii4-bo-jpx"/>
+                                                        <constraint firstAttribute="width" constant="1" id="Wdp-AM-kyc"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkK-eR-Pak">
+                                                    <rect key="frame" x="166" y="30" width="78.333333333333314" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With this level of air quality, you have no limitations. Enjoy the outdoors!&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfG-Rr-WK5">
+                                                    <rect key="frame" x="166" y="55.333333333333343" width="175" height="77"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="77" id="G0E-TF-1xL"/>
+                                                        <constraint firstAttribute="width" constant="175" id="KBO-wp-ULa"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5JI-9p-rKw" firstAttribute="top" secondItem="aoh-uQ-Slh" secondAttribute="top" constant="5" id="15I-QA-G2f"/>
+                                                <constraint firstItem="As5-7t-NGd" firstAttribute="leading" secondItem="5JI-9p-rKw" secondAttribute="trailing" constant="8" symbolic="YES" id="4Wm-hS-PxQ"/>
+                                                <constraint firstItem="5JI-9p-rKw" firstAttribute="leading" secondItem="aoh-uQ-Slh" secondAttribute="leading" constant="5" id="DMq-z8-Cql"/>
+                                                <constraint firstItem="WkK-eR-Pak" firstAttribute="top" secondItem="aoh-uQ-Slh" secondAttribute="top" constant="30" id="Diy-jh-IJk"/>
+                                                <constraint firstItem="IfG-Rr-WK5" firstAttribute="leading" secondItem="WkK-eR-Pak" secondAttribute="leading" id="FCH-FP-jZV"/>
+                                                <constraint firstItem="IfG-Rr-WK5" firstAttribute="top" secondItem="WkK-eR-Pak" secondAttribute="bottom" constant="5" id="azF-Mj-0oH"/>
+                                                <constraint firstItem="As5-7t-NGd" firstAttribute="top" secondItem="aoh-uQ-Slh" secondAttribute="top" constant="16" id="g8o-1I-bf8"/>
+                                                <constraint firstItem="WkK-eR-Pak" firstAttribute="leading" secondItem="As5-7t-NGd" secondAttribute="trailing" constant="12" id="yCk-KE-9MU"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="AQIView" destination="5JI-9p-rKw" id="YEB-dq-ko9"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="G1S-qJ-VHC" id="qcA-fl-MqO"/>
@@ -340,7 +422,7 @@
                             <constraint firstItem="9cg-YI-Tdf" firstAttribute="leading" secondItem="vWC-uK-hyV" secondAttribute="leading" id="zbB-n9-BJ3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Daily Forcast" largeTitleDisplayMode="never" id="kzO-Dt-vgQ"/>
+                    <navigationItem key="navigationItem" title="MyAllerGone" largeTitleDisplayMode="never" id="kzO-Dt-vgQ"/>
                     <connections>
                         <outlet property="CityLabel" destination="DCi-UN-yKp" id="oIp-hj-Bhr"/>
                         <outlet property="HomeCollectionView" destination="9cg-YI-Tdf" id="QcM-cb-QcM"/>
@@ -348,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qf8-MG-I00" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1364" y="1627.7361319340332"/>
+            <point key="canvasLocation" x="-1364.018691588785" y="1627.6457883369333"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hy3-RW-Gsw">

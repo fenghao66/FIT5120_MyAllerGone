@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AQICollectionViewCell: UICollectionViewCell {
+class ForecastCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var firstDayLabel: UILabel!
     @IBOutlet weak var SecondDayLabel: UILabel!

@@ -7,12 +7,14 @@
 
 import UIKit
 import MapKit
+import KDCircularProgress
 
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var CityLabel: UILabel!
     @IBOutlet weak var HomeCollectionView: UICollectionView!
     //var image:UIImage = UIImage()
+
     
     var temp: String = "--"
     var weatherImageName: String?
@@ -287,7 +289,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -310,7 +312,37 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.weatherImage.image =  UIImage(named: "\(weatherImageName ?? "noImage")")
             return cell
         }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AQICollectionViewCell", for: indexPath) as! AQICollectionViewCell
+        
+        if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AQICollectionViewCell", for: indexPath) as! AQICollectionViewCell
+            
+            cell.layer.cornerRadius = 5.0
+            cell.layer.shadowOpacity = 0.3
+            cell.layer.shadowRadius = 5
+            cell.layer.masksToBounds = false
+
+            let view = cell.AQIView
+            let progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+            progress.startAngle = -90
+            progress.angle = 45
+            progress.progressThickness = 0.2
+            progress.trackThickness = 0.6
+            progress.clockwise = true
+            progress.gradientRotateSpeed = 2
+            progress.roundedCorners = false
+            progress.glowMode = .forward
+            progress.glowAmount = 0.9
+            progress.set(colors: UIColor.cyan ,UIColor.white, UIColor.magenta, UIColor.white, UIColor.orange)
+            progress.center = CGPoint(x: view!.center.x - 10, y: view!.center.y - 12 )
+            view?.addSubview(progress)
+            
+            let cellHeight = cell.contentView.bounds.size.height
+            print(cellHeight)
+            
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastCollectionViewCell", for: indexPath) as! ForecastCollectionViewCell
         
         cell.layer.cornerRadius = 5.0
         cell.layer.shadowOpacity = 0.3
@@ -334,6 +366,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         return cell
     }
+    
+    
     
 }
 
