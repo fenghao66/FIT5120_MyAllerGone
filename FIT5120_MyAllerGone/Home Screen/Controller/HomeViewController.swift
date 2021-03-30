@@ -42,15 +42,18 @@ class HomeViewController: UIViewController {
     var forecastMin3: String?
     var forecastMax3: String?
     
+    var aqiString: String?
+    var aqiDesc: String?
+    var aqiRecommendation: String?
     
     var locationManager: CLLocationManager = CLLocationManager()
     var weatherManager = WeatherManager()
     var forecastManager = ForecastManager()
+    var aqiManager = AQIManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let cellScale: CGFloat = 0.90
         let screenSize = UIScreen.main.bounds.size
         let cellWidth = floor(screenSize.width * 0.92)
         let layout = HomeCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
@@ -63,6 +66,7 @@ class HomeViewController: UIViewController {
         
         weatherManager.delegate = self
         forecastManager.delegate = self
+        aqiManager.delegate = self
 
         // Do any additional setup after loading the view.
         guard let tabBar = tabBarController?.tabBar else {
@@ -187,6 +191,28 @@ class HomeViewController: UIViewController {
         self.forecastDate3 = self.getWeedayFromeDate(date: date, forecastIndex: 3)
     }
     
+    //MARK: - Customize AQI progress animation
+    
+    func updateAQIProgress(cell: AQICollectionViewCell, AQI: Double) {
+        let view = cell.AQIView
+        let progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        progress.startAngle = -90
+        progress.angle = AQI * 0.72
+        progress.progressThickness = 0.2
+        progress.trackThickness = 0.6
+        progress.clockwise = true
+        progress.gradientRotateSpeed = 2
+        progress.roundedCorners = true
+        progress.glowMode = .noGlow
+        progress.progressThickness = 0.42
+        progress.trackColor = UIColor(cgColor: #colorLiteral(red: 0.09918874376, green: 0.1465378853, blue: 0.5132053927, alpha: 0.7738655822))
+        progress.set(colors: UIColor.cyan ,UIColor.white, UIColor.magenta, UIColor.white, UIColor.orange)
+        //(colors: UIColor(cgColor: #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)) ,UIColor.white, UIColor(cgColor: #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)), UIColor.white, UIColor(cgColor: #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)))
+        progress.center = CGPoint(x: view!.center.x - 10, y: view!.center.y - 12 )
+        view?.addSubview(progress)
+    }
+    
+    // Display message to user
     func displayMessage(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message,preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "Dismiss",style: UIAlertAction.Style.default,handler: nil))
@@ -206,7 +232,7 @@ class HomeViewController: UIViewController {
 
 }
 
-//MARK: - Receive the data and send it to the UI
+//MARK: - Receive the current weather data and send it to the UI
 
 extension HomeViewController: WeatherManagerDelegate {
     
@@ -222,29 +248,13 @@ extension HomeViewController: WeatherManagerDelegate {
             self.MinTemp = weather.minTempString
             self.MaxTemp = weather.maxTempString
             self.updateWeekAndDate()
-            
-//            let date = self.getCurrentDate()
-//            self.currentDate = self.getCurrentDateString()
-//            self.currentWeekday = self.getWeedayFromeDate(date: date)
-            
             self.HomeCollectionView.reloadData()
-            
-//            self.temperatureLabel.text = weather.temperatureString
-//
-//
-//            self.countryName.text = weather.countryName
-//            self.descriptionLabel.text = weather.description.uppercased()
-//            self.minTemp.text = "\(weather.minTempString)ºC"
-//            self.maxTemp.text = "\(weather.maxTempString)ºC"
-//            self.humidity.text = "\(weather.humidityString)%"
-            
         }
     }
     
     func failError(error: Error) {
-        
 //        DispatchQueue.main.async {
-//            self.alert(title: "Error, city not found 😰", message: "Check the name 🤔")
+//            self.alert(title: "Error", message: "Check")
 //        }
         
     }
@@ -280,6 +290,23 @@ extension HomeViewController: ForecastManagerDelegate {
     }
 }
 
+//MARK: - Receive the AQI data and send it to the UI
+
+extension HomeViewController: AQIManagerDelegate {
+
+    func updateAQIndex(_ aqiManager: AQIManager, aqi: AQIModel){
+        
+        DispatchQueue.main.async {
+            
+            self.aqiString = aqi.AQIndex
+            self.aqiDesc = aqi.AQICategory
+            self.aqiRecommendation = aqi.AQIRecommendation
+
+            self.HomeCollectionView.reloadData()
+        }
+    }
+}
+
 // MARK: - Collection view data source
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -306,7 +333,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.dateLabel.text = self.currentDate
             cell.weedayLabel.text = self.currentWeekday
             cell.weatherDescLabel.text = self.weatherDesc?.capitalized
-            cell.MinMaxTempLabel.text = String("\(self.MinTemp ?? "?")-\(self.MaxTemp ?? "?")°C")
+            cell.MinMaxTempLabel.text = String("\(self.MinTemp ?? "?")~\(self.MaxTemp ?? "?")°C")
             //print(temp!)
             //#imageLiteral(resourceName: "weatherImageName")
             cell.weatherImage.image =  UIImage(named: "\(weatherImageName ?? "noImage")")
@@ -320,27 +347,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.layer.shadowOpacity = 0.3
             cell.layer.shadowRadius = 5
             cell.layer.masksToBounds = false
-
-            let view = cell.AQIView
-            let progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-            progress.startAngle = -90
-            progress.angle = 45
-            progress.progressThickness = 0.2
-            progress.trackThickness = 0.6
-            progress.clockwise = true
-            progress.gradientRotateSpeed = 2
-            progress.roundedCorners = false
-            progress.glowMode = .forward
-            progress.glowAmount = 0.9
-            progress.set(colors: UIColor.cyan ,UIColor.white, UIColor.magenta, UIColor.white, UIColor.orange)
-            progress.center = CGPoint(x: view!.center.x - 10, y: view!.center.y - 12 )
-            view?.addSubview(progress)
             
-            let cellHeight = cell.contentView.bounds.size.height
-            print(cellHeight)
+            cell.AQIndexLabel.text = self.aqiString
+            cell.AQIDescLabel.text = self.aqiDesc
+            cell.AQIRecommendationLabel.text = self.aqiRecommendation
+            let AQIInt = Double(self.aqiString ?? "0")
+            self.updateAQIProgress(cell: cell, AQI: AQIInt!)
             
             return cell
         }
+        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ForecastCollectionViewCell", for: indexPath) as! ForecastCollectionViewCell
         
@@ -351,17 +367,17 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
         cell.firstDayLabel.text = self.forecastDate1
         cell.firstImage.image = UIImage(named: "\(forecastImage1 ?? "noImage")")
-        cell.firstTempLabel.text = String("\(self.forecastMin1 ?? "?")°-\(self.forecastMax1 ?? "?")°")
+        cell.firstTempLabel.text = String("\(self.forecastMin1 ?? "?")°~\(self.forecastMax1 ?? "?")°")
         cell.firstDescLabel.text = self.forecastDesc1?.capitalized
         
         cell.SecondDayLabel.text = self.forecastDate2
         cell.secondImage.image = UIImage(named: "\(forecastImage2 ?? "noImage")")
-        cell.secondTempLabel.text = String("\(self.forecastMin2 ?? "?")°-\(self.forecastMax2 ?? "?")°")
+        cell.secondTempLabel.text = String("\(self.forecastMin2 ?? "?")°~\(self.forecastMax2 ?? "?")°")
         cell.decondDescLabel.text = self.forecastDesc2?.capitalized
         
         cell.thirdDayLabel.text = self.forecastDate3
         cell.thirdImage.image = UIImage(named: "\(forecastImage3 ?? "noImage")")
-        cell.thirdTempLabel.text = String("\(self.forecastMin3 ?? "?")°-\(self.forecastMax3 ?? "?")°")
+        cell.thirdTempLabel.text = String("\(self.forecastMin3 ?? "?")°~\(self.forecastMax3 ?? "?")°")
         cell.thirdDescLabel.text = self.forecastDesc3?.capitalized
         
         return cell
@@ -386,6 +402,7 @@ extension HomeViewController: CLLocationManagerDelegate{
             print("current location lng \(lon)")
             weatherManager.fecthWeatherLocation( latitude: lat, longitude: lon)
             forecastManager.fecthForecastLocation(latitude: lat, longitude: lon)
+            aqiManager.fecthAQILocation(latitude: lat, longitude: lon)
             
         }
     }

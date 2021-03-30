@@ -47,11 +47,11 @@
             </objects>
             <point key="canvasLocation" x="-459" y="919"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Hospital-->
         <scene sceneID="yaJ-kw-oQX">
             <objects>
                 <navigationController id="FYb-10-VCb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="location" id="Zba-KD-i4c"/>
+                    <tabBarItem key="tabBarItem" title="Hospital" image="location" id="Zba-KD-i4c"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Np7-Lx-j7u">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,11 +64,11 @@
             </objects>
             <point key="canvasLocation" x="529" y="919"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="g6D-MP-T1k">
             <objects>
                 <navigationController id="jrG-Pa-4bz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home" id="ztP-gv-hgT"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="ztP-gv-hgT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Oa-Hu-Jby">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -392,7 +392,10 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
+                                            <outlet property="AQIDescLabel" destination="Wbo-3g-Jn3" id="vUH-8f-YFF"/>
+                                            <outlet property="AQIRecommendationLabel" destination="IfG-Rr-WK5" id="0kw-Lf-fLh"/>
                                             <outlet property="AQIView" destination="5JI-9p-rKw" id="YEB-dq-ko9"/>
+                                            <outlet property="AQIndexLabel" destination="3Du-07-iKW" id="fWA-VG-80I"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -452,7 +455,7 @@
         <scene sceneID="fed-jv-uiD">
             <objects>
                 <navigationController id="ccO-at-ulf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="question" id="2NF-ww-Ufy"/>
+                    <tabBarItem key="tabBarItem" title="" id="2NF-ww-Ufy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JWM-Gv-MPb">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -502,7 +505,6 @@
         <image name="home" width="32" height="32"/>
         <image name="location" width="32" height="32"/>
         <image name="location_pin" width="12" height="12"/>
-        <image name="question" width="32" height="32"/>
         <image name="search" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
