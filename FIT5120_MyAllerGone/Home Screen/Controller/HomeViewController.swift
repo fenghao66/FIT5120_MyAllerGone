@@ -55,10 +55,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         let screenSize = UIScreen.main.bounds.size
-        let cellWidth = floor(screenSize.width * 0.92)
+        let cellWidth = floor(screenSize.width * 0.94)
         let layout = HomeCollectionView!.collectionViewLayout as! UICollectionViewFlowLayout
         //let cellSize = layout.collectionViewContentSize
-        layout.itemSize = CGSize(width: cellWidth, height: 150)
+        layout.itemSize = CGSize(width: cellWidth, height: 140)
         
         // locationManager delegate
         locationManager.delegate = self
@@ -316,7 +316,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -340,7 +340,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         }
         
-        if indexPath.row == 2 {
+        if indexPath.row == 3 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AQICollectionViewCell", for: indexPath) as! AQICollectionViewCell
             
             cell.layer.cornerRadius = 5.0
@@ -353,6 +353,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.AQIRecommendationLabel.text = self.aqiRecommendation
             let AQIInt = Double(self.aqiString ?? "0")
             self.updateAQIProgress(cell: cell, AQI: AQIInt!)
+            
+            return cell
+        }
+        
+        if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PollenCollectionViewCell", for: indexPath) as! PollenCollectionViewCell
+            
+            cell.layer.cornerRadius = 5.0
+            cell.layer.shadowOpacity = 0.3
+            cell.layer.shadowRadius = 5
+            cell.layer.masksToBounds = false
+            
+//            cell.AQIndexLabel.text = self.aqiString
+//            cell.AQIDescLabel.text = self.aqiDesc
+//            cell.AQIRecommendationLabel.text = self.aqiRecommendation
+//            let AQIInt = Double(self.aqiString ?? "0")
+//            self.updateAQIProgress(cell: cell, AQI: AQIInt!)
             
             return cell
         }

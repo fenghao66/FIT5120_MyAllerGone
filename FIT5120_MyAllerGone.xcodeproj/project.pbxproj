@@ -10,6 +10,7 @@
 		AA3DDDB07C97B6305889731E /* Pods_FIT5120_MyAllerGone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C0BEB5D5D34F87F5B0FB8F /* Pods_FIT5120_MyAllerGone.framework */; };
 		AC1EF07F260F260300C56B93 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */; };
 		AC1EF083260F349700C56B93 /* ForecastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1EF082260F349700C56B93 /* ForecastCollectionViewCell.swift */; };
+		AC372A2A26136AB6008ED2F0 /* PollenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC372A2926136AB6008ED2F0 /* PollenCollectionViewCell.swift */; };
 		AC4F4A62260F704F00A2E416 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A61260F704F00A2E416 /* WeatherManager.swift */; };
 		AC4F4A68260F71DC00A2E416 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */; };
 		AC4F4A6C260F762E00A2E416 /* VolumeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4F4A6B260F762E00A2E416 /* VolumeData.swift */; };
@@ -39,6 +40,7 @@
 		7F76D8473DEF2512D28EC361 /* Pods-FIT5120_MyAllerGone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIT5120_MyAllerGone.release.xcconfig"; path = "Target Support Files/Pods-FIT5120_MyAllerGone/Pods-FIT5120_MyAllerGone.release.xcconfig"; sourceTree = "<group>"; };
 		AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC1EF082260F349700C56B93 /* ForecastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCollectionViewCell.swift; sourceTree = "<group>"; };
+		AC372A2926136AB6008ED2F0 /* PollenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollenCollectionViewCell.swift; sourceTree = "<group>"; };
 		AC4F4A61260F704F00A2E416 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		AC4F4A67260F71DC00A2E416 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		AC4F4A6B260F762E00A2E416 /* VolumeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeData.swift; sourceTree = "<group>"; };
@@ -58,7 +60,7 @@
 		ACAE559826062AA100BFB05C /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		ACAE559C26062AC100BFB05C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		ACAE55A22606399300BFB05C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		ACF87A1A26130C0E00B5662A /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = launch.jpg; path = ../../../Desktop/launch.jpg; sourceTree = "<group>"; };
+		ACF87A1A26130C0E00B5662A /* launch.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch.jpg; sourceTree = "<group>"; };
 		ACF87A21261312B300B5662A /* AQIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIManager.swift; sourceTree = "<group>"; };
 		ACF87A25261312C300B5662A /* AQIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIData.swift; sourceTree = "<group>"; };
 		ACF87A282613145A00B5662A /* AQIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AQIModel.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				AC1EF07E260F260300C56B93 /* WeatherCollectionViewCell.swift */,
 				AC1EF082260F349700C56B93 /* ForecastCollectionViewCell.swift */,
 				AC76586D26122DE300F07A38 /* AQICollectionViewCell.swift */,
+				AC372A2926136AB6008ED2F0 /* PollenCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				AC4F4A62260F704F00A2E416 /* WeatherManager.swift in Sources */,
 				ACAE557B26061C0700BFB05C /* AppDelegate.swift in Sources */,
 				AC76586E26122DE300F07A38 /* AQICollectionViewCell.swift in Sources */,
+				AC372A2A26136AB6008ED2F0 /* PollenCollectionViewCell.swift in Sources */,
 				ACAE55A32606399400BFB05C /* InfoViewController.swift in Sources */,
 				AC8812A62610E1ED00103566 /* ForecastManager.swift in Sources */,
 				ACF87A22261312B300B5662A /* AQIManager.swift in Sources */,
