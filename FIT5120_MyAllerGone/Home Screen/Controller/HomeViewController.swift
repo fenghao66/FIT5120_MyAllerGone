@@ -13,9 +13,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var CityLabel: UILabel!
     @IBOutlet weak var HomeCollectionView: UICollectionView!
-    //var image:UIImage = UIImage()
 
-    
     var temp: String = "--"
     var weatherImageName: String?
     var currentDate: String?
@@ -340,7 +338,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         }
         
-        if indexPath.row == 3 {
+        if indexPath.row == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AQICollectionViewCell", for: indexPath) as! AQICollectionViewCell
             
             cell.layer.cornerRadius = 5.0
@@ -357,7 +355,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return cell
         }
         
-        if indexPath.row == 2 {
+        if indexPath.row == 3 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PollenCollectionViewCell", for: indexPath) as! PollenCollectionViewCell
             
             cell.layer.cornerRadius = 5.0

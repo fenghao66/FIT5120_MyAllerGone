@@ -18,11 +18,6 @@ struct Daily: Codable {
     let weather: [ForcastWeather]
 }
 
-//struct Day: Codable {
-//    let temp: Temp
-//    let weather: [ForcastWeather]
-//}
-
 struct Temp: Codable {
     let min: Float
     let max: Float
